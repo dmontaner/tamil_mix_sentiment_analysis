@@ -105,9 +105,7 @@ emoji_proportions
 df = emoji_proportions.unstack().reset_index()
 df.columns = ['label', 'emoji', 'proportion']
 
-df = emoji_proportions.unstack().reset_index()
-df.columns = ['label', 'emoji', 'proportion']
-
 fig = px.bar(df.iloc[::-1], y="emoji", x="proportion", color="label", barmode="group", orientation='h')
 fig.update_layout(autosize=False, width=1000, height=2000)
 fig.show()
+fig.show('png')
