@@ -86,7 +86,7 @@ for e in emoji_count.index:
 
 pd.testing.assert_series_equal(data[emoji_count.index].sum(), emoji_count)  # just a check
 
-data
+data[data.has_emojis]
 
 # | Now we are ready to group by class label.
 # | The table below shows the counts of emojis within each sentiment class
@@ -108,4 +108,4 @@ df.columns = ['label', 'emoji', 'proportion']
 fig = px.bar(df.iloc[::-1], y="emoji", x="proportion", color="label", barmode="group", orientation='h')
 fig.update_layout(autosize=False, width=1000, height=2000)
 fig.show()
-fig.show('png')
+fig.show('png')  # just for github
